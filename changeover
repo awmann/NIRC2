@@ -1,0 +1,10 @@
+#This script sets up everything so I don't forget on the LGS changeover.
+#Use the "mov x1 y1 x2 y2" command after a goi to place star at 650 650.
+rotate -42 vertang
+subc 1024
+sampmode 3 16
+tint 5
+coadd 1
+filt Kp
+pupil largehex
+slit clear

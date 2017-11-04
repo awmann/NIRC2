@@ -1,0 +1,9 @@
+#In the event of an interruption (e.g. deliberate) this returns the system to imaging mode.
+
+modify -s nirc2 fwinum = 7 nowait
+modify -s nirc2 fwonum = 17 nowait
+modify -s nirc2 fwoid = clear nowait
+modify -s nirc2 fwiid = F505 nowait
+modify -s nirc2 filter = "Kp + clear"
+pupil largehex
+subc 1024

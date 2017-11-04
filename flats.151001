@@ -1,0 +1,106 @@
+#!/bin/csh -f
+#+
+#
+#make_flats
+#
+# Takes dome flats
+# First run configAOforFlats
+
+configAOforFlats
+
+camera narrow
+pupil largehex
+sltclr
+subc 1024
+coadd 1
+sampmode 3 16
+wait4ao off
+shutter open
+
+filt Kp
+tint 45
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+object LampOn
+modify -s dcs2 flimagin=0 flspectr=1
+goi 25
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+
+filt ch4_short
+tint 45
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+object LampOn 
+modify -s dcs2 flimagin=0 flspectr=1
+goi 25
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+
+filt J
+tint 20
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+object LampOn
+modify -s dcs2 flimagin=0 flspectr=1
+goi 15
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+
+filt z
+tint 45
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+object LampOn
+modify -s dcs2 flimagin=0 flspectr=1
+goi 15
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+
+filt H
+tint 20
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+object LampOn
+modify -s dcs2 flimagin=0 flspectr=1
+goi 15
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+
+filt K
+tint 110
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+object LampOn
+modify -s dcs2 flimagin=0 flspectr=1
+goi 15
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+
+filt Y
+tint 110
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+object LampOn
+modify -s dcs2 flimagin=0 flspectr=1
+goi 15
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 3
+
+object Object
+
+

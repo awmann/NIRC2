@@ -1,0 +1,70 @@
+# User can run this "faint script" from the NIRC2 origin. 
+# Three images are taken, with only the 2nd two used (due to low bandwidth sensor)
+# fscr kmag
+
+mov 514 469 635 635
+
+##### If bright enough, move from acquisition to coronagraph and set appropriate settings
+if ($1 < 110) then
+   echo "Major error - star needs coronagraph!"
+endif
+
+# If not bright enough, just stay there and set appropriate settings
+if ($1 >= 110) then
+	if (($1 >= 110) && ($1 < 120)) then
+		sampmode 3 8 ; tint 2 ; coadd 10
+	endif
+	if (($1 >= 120) && ($1 < 132)) then
+		sampmode 3 16 ; tint 5 ; coadd 4
+	endif
+	if (($1 >= 132)) then
+		sampmode 3 16 ; tint 20 ; coadd 1
+	endif
+	goi 2
+endif
+
+##### Change setups for NRM observations
+
+# corona clear, pupil open, and subarray
+modify -s nirc2 slsname = clear nowait
+modify -s nirc2 slitname = none nowait
+modify -s nirc2 pmsname = open rotbase = 540 >& /dev/null &
+subc 512
+
+	# filter 7 13
+	modify -s nirc2 fwinum = 7 nowait
+	modify -s nirc2 fwiid = F505 nowait
+	modify -s nirc2 fwonum = 13 nowait 
+	modify -s nirc2 fwoid = 9hole nowait
+	modify -s nirc2 filter = "Kp + 9holeMsk"
+	if ($1 >= 95) then
+		sampmode 3 64 ; coadd 1 ; tint 20
+	endif
+	if ($1 < 95) then
+		sampmode 3 16 ; coadd 4 ; tint 5
+	endif
+	if ($1 < 70) then
+		sampmode 3 8 ; coadd 10 ; tint 2
+	endif
+
+goi 8
+playsound ; playsound
+
+# Open loops and return FSMs to ref
+# DISABLED BECAUSE IT BREAKS THINGS
+#modify -s ao dmlp=0
+#modify -s ao dtlp=0
+#modify -s ao aofmx=-0.29 # Check at start of night!
+#modify -s ao aofmy=3.05  # Check at start of night!
+#playsound
+
+
+# Change setups during slew to go back to coronagraphy and quick acquisition imaging
+#filt Kp
+modify -s nirc2 fwinum = 7 nowait
+modify -s nirc2 fwonum = 17 nowait
+modify -s nirc2 fwoid = clear nowait
+modify -s nirc2 fwiid = F505 nowait
+modify -s nirc2 filter = "Kp + clear"
+pupil largehex
+subc 1024

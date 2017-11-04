@@ -1,0 +1,44 @@
+#!/bin/csh -f
+#+
+#
+# spk2 [n]
+#
+# for a half size subframe (512x512)
+# takes n frames (n=1 by default).
+# then nods 256px, 256py and gets a further n frames
+# numbers are changes slightly because the expected numbers
+# did not perform as intended
+#-
+
+#This is assumed to be the "default" sized subframe (512x512)
+#The user origin should be set to the center of upper left quadrant.
+
+# object Science
+#  mov 247 244 135 370
+  goi $1
+  playsound
+  mov 360 150 149 370
+#  mov 580 650 750 350
+
+  goi $1
+  playsound ; playsound 
+
+  # Open loops, return FSMs to ref
+#  modify -s ao dmlp=0
+#  modify -s ao dtlp=0
+#  modify -s ao aofmx=-0.29 # Check at start of night!
+#  modify -s ao aofmy=3.05  # Check at start of night!
+
+
+  
+#  wait4ao off
+#  shutter close
+#  object Dark
+#  goi 2
+#  shutter open
+#  wait4ao on
+#  object Science
+  
+
+
+

@@ -1,0 +1,53 @@
+# KEPacq kmag nframes
+
+echo $1
+
+
+if (($1 >=  50)  && ($1 < 70)) then
+filt Kc
+sampmode 2 ; tint 0.2 ; coadd 50 ; goi $2
+endif
+if (($1 >=  70)  && ($1 < 78)) then
+filt Kc
+sampmode 3 2 ; tint 0.5 ; coadd 20 ; goi $2
+endif
+if (($1 >=  78)  && ($1 < 86)) then
+filt Kc
+sampmode 3 4 ; tint 1 ; coadd 10 ; goi $2
+endif
+
+if (($1 >=  86)  && ($1 < 96)) then 
+filt Kp
+sampmode 2 ; tint 0.2 ; coadd 50 ; goi $2
+endif
+if (($1 >= 96)  && ($1 < 103)) then 
+filt Kp
+sampmode 3 2 ; tint 0.5 ; coadd 20 ; goi $2
+endif
+if (($1 >= 103) && ($1 < 109)) then 
+filt Kp
+sampmode 3 4 ; tint 1 ; coadd 10 ; goi $2
+endif
+if (($1 >= 109) && ($1 < 116)) then 
+filt Kp
+sampmode 3 8 ; tint 2 ; coadd 5 ; goi $2
+endif
+if (($1 >= 116) && ($1 < 123)) then 
+filt Kp
+sampmode 3 16 ; tint 5 ; coadd 2 ; goi $2
+endif
+if (($1 >= 123) && ($1 < 130)) then 
+filt Kp
+sampmode 3 16 ; tint 10 ; coadd 1 ; goi $2
+endif
+if (($1 >= 130)) then 
+filt Kp
+sampmode 3 16 ; tint 10 ; coadd 1 ; goi $2
+endif
+
+
+# playsound
+
+
+
+

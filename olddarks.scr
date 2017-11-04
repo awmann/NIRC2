@@ -1,0 +1,55 @@
+subc 800 888 ; sampmode 2 ; tint 0.181 ; coadds 50 ; goi 15
+subc 800 888 ; sampmode 3 8 ; tint 2 ; coadds 5 ; goi 15
+subc 800 888 ; sampmode 2 ; tint 0.2 ; coadds 50 ; goi 15
+subc 800 888 ; sampmode 2 ; tint 0.4 ; coadds 50 ; goi 15
+subc 800 888 ; sampmode 2 ; tint 10 ; coadds 1 ; goi 15
+subc 800 888 ; sampmode 3 8 ; tint 1.5 ; coadds 10 ; goi 15
+subc 800 888 ; sampmode 3 8 ; tint 1.5 ; coadds 20 ; goi 15
+subc 800 888 ; sampmode 3 8 ; tint 2 ; coadds 10 ; goi 15
+subc 800 888 ; sampmode 2 ; tint 0.2 ; coadds 100 ; goi 15
+subc 800 888 ; sampmode 3 16 ; tint 5 ; coadds 6 ; goi 15
+subc 800 888 ; sampmode 3 32 ; tint 5 ; coadds 4 ; goi 15
+subc 800 888 ; sampmode 3 32 ; tint 7.5 ; coadds 4 ; goi 15
+subc 800 888 ; sampmode 3 32 ; tint 10 ; coadds 1 ; goi 15
+subc 800 888 ; sampmode 3 32 ; tint 15 ; coadds 2 ; goi 15
+subc 800 888 ; sampmode 3 32 ; tint 5 ; coadds 12 ; goi 15
+subc 512 512 ; sampmode 2 ; tint 0 ; coadds 20 ; goi 15
+subc 512 512 ; sampmode 3 4 ; tint 2 ; coadds 1 ; goi 15
+subc 512 512 ; sampmode 2 ; tint 3 ; coadds 7 ; goi 15
+subc 512 512 ; sampmode 3 4 ; tint 3 ; coadds 7 ; goi 15
+subc 512 512 ; sampmode 3 16 ; tint 1 ; coadds 1 ; goi 15
+subc 512 512 ; sampmode 3 16 ; tint 3.333 ; coadds 3 ; goi 15
+subc 512 512 ; sampmode 3 64 ; tint 5 ; coadds 1 ; goi 15
+subc 512 512 ; sampmode 3 16 ; tint 30 ; coadds 1 ; goi 15
+subc 512 512 ; sampmode 3 32 ; tint 60 ; coadds 1 ; goi 15
+subc 512 512 ; sampmode 3 16 ; tint 10 ; coadds 10 ; goi 9
+subc 1024 1024 ; sampmode 2 ; tint 0.2 ; coadds 5 ; goi 15
+subc 1024 1024 ; sampmode 2 ; tint 0.4 ; coadds 5 ; goi 15
+subc 1024 1024 ; sampmode 2 ; tint 1 ; coadds 5 ; goi 15
+subc 1024 1024 ; sampmode 3 8 ; tint 1.5 ; coadds 6 ; goi 15
+subc 1024 1024 ; sampmode 2 ; tint 2 ; coadds 2 ; goi 15
+subc 1024 1024 ; sampmode 3 8 ; tint 2 ; coadds 3 ; goi 15
+subc 1024 1024 ; sampmode 3 8 ; tint 2.5 ; coadds 4 ; goi 15
+subc 1024 1024 ; sampmode 3 8 ; tint 4 ; coadds 5 ; goi 15
+subc 1024 1024 ; sampmode 3 8 ; tint 5 ; coadds 1 ; goi 15
+subc 1024 1024 ; sampmode 2 ; tint 0.5 ; coadds 20 ; goi 15
+subc 1024 1024 ; sampmode 2 ; tint 0.5 ; coadds 40 ; goi 15
+subc 1024 1024 ; sampmode 2 ; tint 0.5 ; coadds 60 ; goi 15
+subc 1024 1024 ; sampmode 3 8 ; tint 10 ; coadds 3 ; goi 15
+subc 1024 1024 ; sampmode 2 ; tint 1 ; coadds 20 ; goi 15
+subc 1024 1024 ; sampmode 2 ; tint 1 ; coadds 30 ; goi 15
+subc 1024 1024 ; sampmode 3 8 ; tint 2 ; coadds 30 ; goi 15
+subc 1024 1024 ; sampmode 2 ; tint 30 ; coadds 1 ; goi 15
+subc 1024 1024 ; sampmode 3 16 ; tint 3 ; coadds 1 ; goi 15
+subc 1024 1024 ; sampmode 3 8 ; tint 3 ; coadds 10 ; goi 15
+subc 1024 1024 ; sampmode 3 16 ; tint 5 ; coadds 6 ; goi 15
+subc 1024 1024 ; sampmode 3 32 ; tint 7.5 ; coadds 4 ; goi 15
+subc 1024 1024 ; sampmode 3 32 ; tint 8 ; coadds 1 ; goi 15
+subc 1024 1024 ; sampmode 3 32 ; tint 10 ; coadds 2 ; goi 15
+subc 1024 1024 ; sampmode 3 16 ; tint 15 ; coadds 4 ; goi 15
+subc 1024 1024 ; sampmode 3 32 ; tint 15 ; coadds 2 ; goi 15
+subc 1024 1024 ; sampmode 3 64 ; tint 15 ; coadds 2 ; goi 15
+subc 1024 1024 ; sampmode 3 32 ; tint 20 ; coadds 1 ; goi 15
+subc 1024 1024 ; sampmode 3 32 ; tint 30 ; coadds 1 ; goi 15
+subc 1024 1024 ; sampmode 3 16 ; tint 10 ; coadds 50 ; goi 3
+subc 1024 1024 ; sampmode 3 64 ; tint 600 ; coadds 1 ; goi 3

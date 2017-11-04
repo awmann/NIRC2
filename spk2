@@ -1,0 +1,19 @@
+#!/bin/csh -f
+#+
+#
+# spk2 [n]
+#
+# takes n frames (n=1 by default).
+# then nods 256px and gets a further n frames
+#-
+
+  goi $1
+
+  px 256 
+  # nod to the right 256 pix
+
+  goi $1
+
+  # px -256
+  # nod to the left 256 pix
+

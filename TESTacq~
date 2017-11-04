@@ -1,0 +1,16 @@
+# KEPacq kmag
+
+echo $1
+
+if (($1 <  93)) sampmode 2 ; tint 0.2 ; coadd 50
+if (($1 >= 93)  && ($1 < 100)) sampmode 3 2 ; tint 0.5 ; coadd 20
+if (($1 >= 100) && ($1 < 106)) sampmode 3 4 ; tint 1 ; coadd 10
+if (($1 >= 106) && ($1 < 113)) sampmode 3 8 ; tint 2 ; coadd 5
+if (($1 >= 113) && ($1 < 120)) sampmode 3 16 ; tint 5 ; coadd 2
+if (($1 >= 120)) sampmode 3 16 ; tint 10 ; coadd 1
+
+goi 
+# playsound
+
+
+

@@ -1,0 +1,52 @@
+shutter close
+wait4ao off
+filt jcont
+object darks
+subc 1024
+sampmode 2
+tint 0.2
+coadd 50
+goi 15
+
+subc 1024
+sampmode 3 2
+tint 0.5
+coadd 20
+goi 15
+
+subc 1024
+sampmode 3 4
+tint 1.0
+coadd 10
+goi 15
+
+subc 1024
+sampmode 3 16
+tint 10.0
+coadd 1
+goi 15
+
+subc 1024
+sampmode 3 8
+tint 2.0
+coadd 5
+goi 15
+
+subc 1024
+sampmode 3 16
+tint 5.0
+coadd 2
+goi 15
+
+subc 512
+sampmode 3 16
+tint 10.0
+coadd 2
+goi 15
+
+subc 512
+sampmode 3 16
+tint 5.0
+coadd 4
+goi 15
+

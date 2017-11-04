@@ -1,0 +1,60 @@
+#!/bin/csh -f
+#+
+#
+#make_flats
+#
+# Takes dome flats
+# First run configAOforFlats
+
+#configAOforFlats
+
+camera narrow
+pupil largehex
+corona clear
+subc 1024
+coadd 1
+sampmode 3 16
+wait4ao off
+shutter open
+
+
+filt ch4_short
+tint 45
+object LampOn
+modify -s dcs2 flimagin=0 flspectr=1
+goi 25
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 5
+
+filt Kp
+tint 45
+object LampOn 
+modify -s dcs2 flimagin=0 flspectr=1
+goi 25
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 5
+
+filt Kp
+tint 45
+corona 600 616
+object LampOn
+modify -s dcs2 flimagin=0 flspectr=1
+goi 15
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 5
+corona clear
+
+filt J
+tint 20
+object LampOn
+modify -s dcs2 flimagin=0 flspectr=1
+goi 15
+object LampOff
+modify -s dcs2 flimagin=0 flspectr=0
+goi 5
+
+shutter close
+object Object

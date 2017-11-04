@@ -1,0 +1,47 @@
+#aohatch close
+filt hcont
+shutter close
+subc 512
+sampmode 3 16
+coadd 4
+tint 5
+goi 11
+sampmode 3 64
+coadd 1
+tint 20
+goi 11
+sampmode 2
+coadd 50
+tint 0.2
+goi 11
+sampmode 3 4
+coadd 10
+tint 2
+goi 11
+sampmode 3 4
+coadd 10
+tint 1
+goi 11
+sampmode 3 8
+coadd 10
+tint 2
+sampmode 3 2
+coadd 20
+tint 0.5
+goi 11
+sampmode 2
+coadd 50
+tint 0.2
+goi 11
+
+subc 1024
+sampmode 3 4
+coadds 10
+tint 1
+goi 11
+sampmode 3 16
+coadds 1
+tint 20
+goi 11
+
+

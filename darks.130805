@@ -1,0 +1,21 @@
+#!/bin/csh -f
+
+aohatch close
+shutter close
+wait4ao off
+object Darks
+
+subc 512
+
+ sampmode 3 2
+ tint 0.2
+ coadd 50
+goi 50
+ sampmode 3 4
+ tint 0.25
+ coadd 40
+goi 5
+
+
+object Science
+wait4ao on

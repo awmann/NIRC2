@@ -1,0 +1,42 @@
+# ICacq kmag
+
+mov 428 616 635 635
+#mov 538 447 635 635
+
+echo $1
+
+if (($1 >=  67)  && ($1 < 75)) then
+filt Kc
+sampmode 3 2 ; tint 0.5 ; coadd 20 ; goi 2
+filt Kp
+endif
+if (($1 >=  75)  && ($1 < 83)) then
+filt Kc
+sampmode 3 4 ; tint 1 ; coadd 10 ; goi 2
+filt Kp
+endif
+if (($1 >=  83)  && ($1 < 93)) then 
+sampmode 2 ; tint 0.2 ; coadd 50 ; goi 2
+endif
+if (($1 >= 93)  && ($1 < 100)) then 
+sampmode 3 2 ; tint 0.5 ; coadd 20 ; goi 2
+endif
+if (($1 >= 100) && ($1 < 106)) then 
+sampmode 3 4 ; tint 1 ; coadd 10 ; goi 2
+endif
+if (($1 >= 106) && ($1 < 113)) then 
+sampmode 3 8 ; tint 2 ; coadd 5 ; goi 2
+endif
+if (($1 >= 113) && ($1 < 120)) then 
+sampmode 3 16 ; tint 5 ; coadd 2 ; goi 2
+endif
+if (($1 >= 120)) then 
+sampmode 3 16 ; tint 10 ; coadd 1 ; goi 2
+endif
+
+
+# playsound
+
+
+
+

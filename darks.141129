@@ -1,0 +1,68 @@
+#   data directory = "/sdata903/nirc20/2014nov30/"
+#   NMIN = 3
+#   NDARKS = 10
+#
+#   total # of dark frames = 340
+#     -> total integration time = 77.0612 min
+#     -> total estimated readout time = 56.6667 min
+#   total estimated elapsed time = 133.728 min
+#----------------------------------------------------------------------#
+echo "----- starting darks -----"
+date
+
+sltclr
+shutter closed
+aohatch closed
+dark
+object dark
+wait4ao off
+wait4dar off
+filt blank
+
+subc 256 264; sampmode 2 2; coadd 100; tint 0.0180000; goi 10; sleep 5
+subc 320 312; sampmode 2 2; coadd 50; tint 0.0240000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 100; tint 0.0530000; goi 10; sleep 5
+subc 512 512; sampmode 2 8; coadd 100; tint 0.0530000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 1; tint 0.100000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 10; tint 0.100000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 100; tint 0.100000; goi 10; sleep 5
+subc 1024 1024; sampmode 2 2; coadd 1; tint 0.181000; goi 10; sleep 5
+subc 1024 1024; sampmode 2 2; coadd 10; tint 0.181000; goi 10; sleep 5
+subc 1024 1024; sampmode 2 16; coadd 50; tint 0.181000; goi 10; sleep 5
+subc 1024 1024; sampmode 2 2; coadd 50; tint 0.181000; goi 10; sleep 5
+subc 1024 1024; sampmode 2 16; coadd 100; tint 0.200000; goi 10; sleep 5
+subc 1024 1024; sampmode 2 2; coadd 100; tint 0.200000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 100; tint 0.200000; goi 10; sleep 5
+subc 1024 1024; sampmode 2 64; coadd 100; tint 0.200000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 50; tint 0.200000; goi 10; sleep 5
+subc 512 512; sampmode 3 4; coadd 50; tint 0.211000; goi 10; sleep 5
+subc 1024 1024; sampmode 3 2; coadd 100; tint 0.363000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 50; tint 0.400000; goi 10; sleep 5
+subc 1024 1024; sampmode 3 4; coadd 1; tint 0.726000; goi 10; sleep 5
+subc 1024 1024; sampmode 3 4; coadd 1; tint 1.00000; goi 10; sleep 5
+subc 1024 1024; sampmode 3 4; coadd 20; tint 1.00000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 10; tint 1.50000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 1; tint 10.0000; goi 10; sleep 5
+subc 1024 1024; sampmode 3 4; coadd 1; tint 10.0000; goi 10; sleep 5
+subc 512 512; sampmode 3 8; coadd 10; tint 2.00000; goi 10; sleep 5
+subc 1024 1024; sampmode 3 16; coadd 1; tint 20.0000; goi 10; sleep 5
+subc 512 512; sampmode 3 16; coadd 1; tint 20.0000; goi 10; sleep 5
+subc 512 512; sampmode 3 64; coadd 1; tint 20.0000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 10; tint 3.00000; goi 10; sleep 5
+subc 512 512; sampmode 2 2; coadd 3; tint 3.00000; goi 10; sleep 5
+subc 1024 1024; sampmode 3 16; coadd 1; tint 45.0000; goi 10; sleep 5
+subc 1024 1024; sampmode 3 16; coadd 4; tint 5.00000; goi 10; sleep 5
+subc 512 512; sampmode 3 16; coadd 4; tint 5.00000; goi 10; sleep 5
+
+playsound
+echo ""
+echo "--------------------------------"
+echo " *** DARK SCRIPT COMPLETED ***"
+echo "--------------------------------"
+echo ""
+
+
+
+
+
+

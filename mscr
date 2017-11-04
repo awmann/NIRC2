@@ -1,0 +1,36 @@
+# User can run this "masking script" from the NIRC2 origin. 
+# It takes 8 masking images, and is designed for LGS mode where
+# you don't want to take data right away because you're waiting
+# for the low-bandwidth WFS to settle
+
+# mscr kmag
+
+mov 514 469 635 635
+
+##### Change setups for NRM observations
+
+# corona clear, pupil open, and subarray
+modify -s nirc2 slsname = clear nowait
+modify -s nirc2 slitname = none nowait
+modify -s nirc2 pmsname = open rotbase = 540 >& /dev/null &
+subc 512
+
+	# filter 7 13
+	modify -s nirc2 fwinum = 7 nowait
+	modify -s nirc2 fwiid = F505 nowait
+	modify -s nirc2 fwonum = 13 nowait 
+	modify -s nirc2 fwoid = 9hole nowait
+	modify -s nirc2 filter = "Kp + 9holeMsk"
+	if ($1 >= 95) then
+		sampmode 3 64 ; coadd 1 ; tint 20
+	endif
+	if ($1 < 95) then
+		sampmode 3 16 ; coadd 4 ; tint 5
+	endif
+	if ($1 < 70) then
+		sampmode 3 8 ; coadd 10 ; tint 2
+	endif
+
+goi 8
+playsound ; playsound
+

@@ -1,0 +1,109 @@
+# User should manually take 1 quick image, then call script with xy coords
+# KEPscr mask=9/18 xinit yinit kmag
+
+
+##### If bright enough, move from acquisition to coronagraph and set appropriate settings
+if ($4 < 110) then
+#	subc 1024 NOTE KEPacq never changes subc
+#	filt Kp Note should always be there after KEPacq
+
+	corona 600 616
+	if ($4 >= 86) then
+		mov $2 $3 613 427
+		sampmode 3 16 ; tint 20 ; coadd 1
+	endif
+	if (($4 >= 80) && ($4 < 86)) then
+		mov $2 $3 628 442
+		sampmode 3 16 ; tint 20 ; coadd 1
+	endif
+	if ($4 <  80) then
+		mov $2 $3 613 427
+#		mov $2 $3 628 442
+		sampmode 3 16 ; tint 5 ; coadd 4
+	endif
+goi 3
+endif
+
+# If not bright enough, just stay there and set appropriate settings
+##if ($4 >= 109) then
+#	subc 1024
+#	filt Kp
+#	if (($4 >= 103) && ($4 < 109)) then
+#		sampmode 3 4 ; tint 1 ; coadd 20
+#	endif
+#	corona clear
+#	if (($4 >= 110) && ($4 < 118)) then
+#		sampmode 3 8 ; tint 2 ; coadd 10
+#	endif
+#	if (($4 >= 118) && ($4 < 125)) then
+#		sampmode 3 16 ; tint 5 ; coadd 4
+#	endif
+#	if (($4 >= 125) && ($4 < 132)) then
+#		sampmode 3 16 ; tint 10 ; coadd 2
+#	endif
+#	if (($4 >= 132)) then
+#		sampmode 3 16 ; tint 20 ; coadd 1
+#	endif
+#goi 4
+#endif
+
+
+
+##### Change setups for NRM observations
+
+# corona clear, pupil open, and subarray
+modify -s nirc2 slsname = clear nowait
+modify -s nirc2 slitname = none nowait
+#modify -s nirc2 pmsname = open rotbase = 540 >& /dev/null &
+subc 512
+pupil open
+
+if ($1 == 9) then
+	echo 999999999999999999
+endif
+
+	# filter 7 13
+	modify -s nirc2 fwinum = 7 nowait
+	modify -s nirc2 fwiid = F505 nowait
+	modify -s nirc2 fwonum = 13 nowait 
+	modify -s nirc2 fwoid = 9hole nowait
+	modify -s nirc2 filter = "Kp + 9holeMsk"
+	if ($4 > 130) then
+		sampmode 3 64 ; coadd 1 ; tint 60
+	endif
+	if (($4 < 130) && ($4 >= 96))then
+		sampmode 3 64 ; coadd 1 ; tint 20
+	endif
+	if (($4 < 95) && ($4 >= 70)) then
+		sampmode 3 16 ; coadd 4 ; tint 5
+	endif
+	if ($4 < 70) then
+		sampmode 3 8 ; coadd 10 ; tint 2
+	endif
+
+
+goi 8
+playsound ; playsound
+
+# Open loops and return FSMs to ref
+#modify -s ao dmlp=0
+#modify -s ao dtlp=0
+#modify -s ao aofmx=-0.29 # Check at start of night!
+#modify -s ao aofmy=3.05  # Check at start of night!
+#playsound
+
+
+# Change setups during slew to go back to coronagraphy and quick acquisition imaging
+#filt Kp
+modify -s nirc2 fwinum = 7 nowait
+modify -s nirc2 fwonum = 17 nowait
+modify -s nirc2 fwoid = clear nowait
+modify -s nirc2 fwiid = F505 nowait
+modify -s nirc2 filter = "Kp + clear"
+pupil largehex
+subc 1024
+#corona 600 616
+#sampmode 2 ; coadd 50 ; tint 0.2
+
+
+
