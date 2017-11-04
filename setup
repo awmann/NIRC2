@@ -1,0 +1,11 @@
+# initial setup for standard run
+# sets vertang, wait4ao, filter, sampmode, pupil, camera, etc. 
+# Run after flats complete or after LGS checkout
+
+wait4ao on
+rotate -44 vertang
+filt kp
+sampmode 3 4
+pupil largehex
+camera narrow
+subc 1024 

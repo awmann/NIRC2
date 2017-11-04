@@ -1,8 +1,12 @@
+#!/bin/csh -f
 # KEPacq kmag nframes
 
 echo $1
 
-
+if ($1 < 50) then
+filt kc
+sampmode 2 ; tint 0.2 ; coadd 50 ; goi $2
+endif
 if (($1 >=  50)  && ($1 < 70)) then
 filt Kc
 sampmode 2 ; tint 0.2 ; coadd 50 ; goi $2
@@ -42,7 +46,7 @@ sampmode 3 16 ; tint 10 ; coadd 1 ; goi $2
 endif
 if (($1 >= 130)) then 
 filt Kp
-sampmode 3 16 ; tint 10 ; coadd 1 ; goi $2
+sampmode 3 16 ; tint 20 ; coadd 1 ; goi $2
 endif
 
 

@@ -1,0 +1,8 @@
+# removes masking setup, standard for imaging
+
+pupil largehex
+
+filt kp
+
+subc 1024
+

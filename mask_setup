@@ -1,0 +1,25 @@
+# setup for masking, run while slewing
+# mask_setup kmag*10
+
+echo $1
+
+pupil open ; subc 512 ; filter 7 13
+
+if ($1 < 70) then
+sampmode 3 8 ; coadd 10 ; tint 2
+endif
+
+if (($1 >= 70) && ($1 < 95)) then
+sampmode 3 16 ; coadd 4 ; tint 5
+endif
+
+if (($1 >= 95) && ($1 < 130)) then
+sampmode 3 64 ; coadd 1 ; tint 20
+endif
+
+if ($1 >= 130) then
+sampmode 3 64 ; coadd 1 ; tint 60
+endif
+
+
+
